@@ -6,37 +6,14 @@
   src="https://cdn.jsdelivr.net/npm/@talkjs/web-components@0.0.27"
   async
 ></script>
-<<<<<<< HEAD
-</head>
-
-<div id="userForm">
-  <label for="userName">User name:</label><br>
-  <input type="text" id="userName" name="userName"><br>
-  <button id="submitUser">submit</button>
-</div>
-<div id="chatDiv"
-hidden>
-<t-chatbox
-  id = "chatBox"
-  host="durhack.talkjs.com"
-  style="width: 400px; height: 600px;"
-  app-id="tJU4ulfD"
-  user-id= null
-  conversation-id="my_conversation2"
-  message-field-visible = false
-  hidden
-></t-chatbox></div>
-<script type = "module" src="http://[::1]:8000/chattingSystem.js"></script>
-=======
-<script src="chattingSystem.js"></script>
 <script type="module">
   import { getTalkSession } from 'https://cdn.jsdelivr.net/npm/@talkjs/core@1.5.8';
 
   const appId = 'tJU4ulfD';
 
-  const userId = 'Frank';
-  const otherUserId = 'Nina';
-  const conversationId = 'my_conversation2';
+  const userId = 'User';
+  const otherUserId = 'Server';
+  const conversationId = 'globalConv';
 
   const session = getTalkSession({
     // @ts-ignore
@@ -45,20 +22,21 @@ hidden>
     userId,
   });
 
-  session.currentUser.createIfNotExists({ name: 'Frank' });
-  session.user(otherUserId).createIfNotExists({ name: 'Nina' });
+  session.currentUser.createIfNotExists({ name: 'Me' });
+  session.user(otherUserId).createIfNotExists({ name: 'Server' });
 
   const conversation = session.conversation(conversationId);
   conversation.createIfNotExists();
   conversation.participant(otherUserId).createIfNotExists();
-  //conversation.send("Hi");
 </script></head>
 
+
 <t-chatbox
+  id = "chatBox"
   host="durhack.talkjs.com"
   style="width: 400px; height: 600px;"
   app-id="tJU4ulfD"
-  user-id="Frank"
-  conversation-id="my_conversation2"
+  user-id= "User"
+  conversation-id="globalConv"
+  message-field-visible = false
 ></t-chatbox>
->>>>>>> 166603958a3c9ff8ff054f689a6aa6232c84e86a
