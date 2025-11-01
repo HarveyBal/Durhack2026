@@ -1,0 +1,28 @@
+<head><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@talkjs/web-components@0.0.27/default.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/@talkjs/web-components@0.0.27"
+  async
+></script>
+</head>
+
+<div id="userForm">
+  <label for="userName">User name:</label><br>
+  <input type="text" id="userName" name="userName"><br>
+  <button id="submitUser">submit</button>
+</div>
+<div id="chatDiv"
+hidden>
+<t-chatbox
+  id = "chatBox"
+  host="durhack.talkjs.com"
+  style="width: 400px; height: 600px;"
+  app-id="tJU4ulfD"
+  user-id= null
+  conversation-id="my_conversation2"
+  message-field-visible = false
+  hidden
+></t-chatbox></div>
+<script type = "module" src="http://[::1]:8000/chattingSystem.js"></script>
