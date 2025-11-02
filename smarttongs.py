@@ -3,6 +3,7 @@ from gpio_lcd import GpioLcd
 from picozero import Button
 import utime
 #This code was created from a base of 'hello+world.py' by Ramji Patel https://www.instructables.com/Raspberry-Pi-Pico-and-16x2-LCD/
+#Wiring of circuit is also based on what can be found at https://www.instructables.com/Raspberry-Pi-Pico-and-16x2-LCD/
 #Configure the Gpio pin of the Raspberry pi pico
 lcd = GpioLcd(rs_pin = Pin(0),
               enable_pin = Pin(1),
@@ -93,4 +94,5 @@ while True:
   #      lcd.move_to(0,1)    #set the curstor location to (0,1)
    #     lcd.putstr(str(i))  #convert the i into string and print it
     #    utime.sleep(0.5)    #create a delay of 0.5 second
+
 
